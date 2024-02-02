@@ -17,7 +17,7 @@ class _QuizPageState extends State<QuizPage> {
     },
     {
       'question': 'Question 2: What hair problem would you like to solve?',
-      'options': ['Split ends', 'Dandruff', 'Color fading'],
+      'options': ['Split ends', 'Dandruff', 'Color Fading'],
     },
     {
       'question': 'Question 3: How would you describe the volume of your hair?',

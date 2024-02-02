@@ -68,6 +68,12 @@ flutter:
     - assets/yves_rocher.jpg
     - assets/main_pic.jpg
     - assets/home_page.jpg
+    - assets/repair.jpg
+    - assets/dry_hair_cream.jpg
+    - assets/dry_hair_oil.jpg
+    - assets/anti_hair_loss_shampoo.jpg
+    - assets/dandruff_shampoo.jpg
+    - assets/mint.jpg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

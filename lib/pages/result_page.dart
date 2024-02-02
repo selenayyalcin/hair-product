@@ -13,28 +13,33 @@ class ResultPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Result Page"),
       ),
-      body: Center(
-        //padding: const EdgeInsets.all(24.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              "Your Hair Type: $hairType",
-              style: const TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 255, 120, 194)),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 20),
-            const Text(
-              "Recommended Products:",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 10),
-            buildRecommendedProducts(hairType),
-          ],
+      body: Padding(
+        padding: const EdgeInsets.all(24.0),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                "Your Hair Type: $hairType",
+                style: const TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Color.fromARGB(255, 255, 120, 194)),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 20),
+              const Text(
+                "Recommended Products:",
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Color.fromARGB(255, 255, 120, 194)),
+              ),
+              const SizedBox(height: 10),
+              buildRecommendedProducts(hairType),
+            ],
+          ),
         ),
       ),
     );
@@ -65,53 +70,61 @@ class ResultPage extends StatelessWidget {
   }
 
   Widget buildRecommendedProducts(String hairType) {
-    if (hairType == 'Dry and Split ends') {
-      return const Column(
+    if (hairType == 'Dry and Split ends' || hairType == 'Oily and Split Ends') {
+      return Column(
         children: [
-          Text("Moisturizing Shampoo"),
-          Text("Repairing Hair Mask"),
+          const Text("Moisturizing Shampoo Set"),
+          Image.asset(
+            'assets/repair.jpg',
+            width: 300,
+            height: 300,
+            fit: BoxFit.cover,
+          ),
+          const SizedBox(height: 16),
+          const Text("Repairing Hair Mask"),
+          Row(
+            children: [
+              Expanded(
+                child: Image.asset(
+                  'assets/dry_hair_cream.jpg',
+                  width: 300,
+                  height: 250,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Expanded(
+                child: Image.asset(
+                  'assets/dry_hair_oil.jpg',
+                  width: 300,
+                  height: 250,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ],
+          ),
         ],
       );
-    } else if (hairType == 'Oily and Split Ends') {
-      return const Column(
+    } else if (hairType == 'Oily and Dandruff' ||
+        hairType == 'Dry and Dandruff') {
+      return Column(
         children: [
-          //Text("a"),
-          //Text("b"),
+          const Text("Anti-Dandruff Shampoo"),
+          Image.asset('assets/dandruff_shampoo.jpg')
         ],
       );
-    } else if (hairType == 'Oily and Dandruff') {
-      return const Column(
+    } else if (hairType == 'Dry and Color Fading' ||
+        hairType == 'Oily and Color Fading') {
+      return Column(
         children: [
-          //Text("c"),
-          //Text("d"),
-        ],
-      );
-    } else if (hairType == 'Dry and Dandruff') {
-      return const Column(
-        children: [
-          //Text("e"),
-          //Text("f"),
-        ],
-      );
-    } else if (hairType == 'Dry and Color Fading') {
-      return const Column(
-        children: [
-          //Text("a"),
-          //Text("b"),
-        ],
-      );
-    } else if (hairType == 'Oily and Color Fading') {
-      return const Column(
-        children: [
-          //Text("a"),
-          //Text("b"),
+          const Text("Anti Hair-Loss Shampoo"),
+          Image.asset('assets/anti_hair_loss_shampoo.jpg')
         ],
       );
     } else {
-      return const Column(
+      return Column(
         children: [
-          //Text("k"),
-          //Text("n"),
+          const Text("You can use a hair mint to make your hair brighter!"),
+          Image.asset('assets/mint.jpg'),
         ],
       );
     }
