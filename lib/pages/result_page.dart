@@ -70,7 +70,8 @@ class ResultPage extends StatelessWidget {
   }
 
   Widget buildRecommendedProducts(String hairType) {
-    if (hairType == 'Dry and Split ends' || hairType == 'Oily and Split Ends') {
+    if ((hairType == 'Dry and Split ends') ||
+        (hairType == 'Oily and Split ends')) {
       return Column(
         children: [
           const Text("Moisturizing Shampoo Set"),
@@ -104,16 +105,16 @@ class ResultPage extends StatelessWidget {
           ),
         ],
       );
-    } else if (hairType == 'Oily and Dandruff' ||
-        hairType == 'Dry and Dandruff') {
+    } else if ((hairType == 'Oily and Dandruff') ||
+        (hairType == 'Dry and Dandruff')) {
       return Column(
         children: [
           const Text("Anti-Dandruff Shampoo"),
           Image.asset('assets/dandruff_shampoo.jpg')
         ],
       );
-    } else if (hairType == 'Dry and Color Fading' ||
-        hairType == 'Oily and Color Fading') {
+    } else if ((hairType == 'Dry and Color Fading') ||
+        (hairType == 'Oily and Color Fading')) {
       return Column(
         children: [
           const Text("Anti Hair-Loss Shampoo"),
