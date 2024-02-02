@@ -76,8 +76,8 @@ class _QuizPageState extends State<QuizPage> {
   }
 
   void saveUserAnswer(int userAnswerIndex) {
-    String currentQuestion = questions[currentQuestionIndex]['question'];
-    userAnswers[currentQuestion] =
+    String questionKey = 'Question ${currentQuestionIndex + 1}';
+    userAnswers[questionKey] =
         questions[currentQuestionIndex]['options'][userAnswerIndex];
   }
 
